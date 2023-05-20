@@ -1,0 +1,77 @@
+/* === nav ===*/
+
+.nav_main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 10px 10px 30px;
+}
+
+.menu_items {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  z-index: 10;
+}
+
+.menu_item {
+  margin: 0 30px 0 0;
+}
+
+.menu_item .active {
+  font-weight: 900;
+}
+
+.menu_item a {
+  font-size: 16px;
+  color: var(--font-light);
+  text-shadow: 1px 0 5px #474747, 0 1px 5px #474747, -1px 0 5px #474747,
+  0 -1px 5px #474747;
+}
+
+.menu_item box-icon {
+  height: 20px;
+  /*filter: drop-shadow(1px 0 5px #474747, 0 1px 5px #474747, -1px 0 5px #474747,
+          0 -1px 5px #474747);*/
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00000080;
+  padding: 6px;
+  margin: 0 30px;
+  border-radius: 30px;
+}
+
+.search box-icon {
+  height: 16px;
+}
+
+.user {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.user a {
+  display: inline-block;
+  background: #00000080;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.user box-icon {
+  height: 10px;
+  margin-top: 2px;
+  color: var(--font-light);
+}
+
+.user img {
+  height: 20px;
+  width: 20px;
+  margin: 0 5px 0 0;
+  border-radius: 50%;
+}

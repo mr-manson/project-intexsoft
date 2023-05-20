@@ -1,0 +1,100 @@
+/* === new ===*/
+.new_items {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  margin: 0 -15px 50px;
+
+  z-index: 2;
+}
+
+.new_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 200px;
+  min-width: 600px;
+  margin: 0 10px;
+  transition: 0.5s;
+  z-index: 0;
+  box-shadow: 0 0 20px black;
+  &.active {
+    height: 250px;
+    min-width: 600px;
+  }
+}
+
+.album_pack {
+  position: relative;
+  height: 175px;
+  width: 175px;
+  margin-left: 40px;
+}
+
+.new_item .cover {
+  height: 175px;
+  transition: 0.7s;
+}
+
+/* --------------------------------------------------- */
+.new_item .vinyl {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  height: 150px;
+  width: 150px;
+  transition: 0.7s;
+  z-index: -1;
+}
+/* --------------------------------------------------- */
+
+.new_item:nth-child(1) {
+  background: url("./../../../assets/new-01-bg.jpg");
+  background-size: cover;
+}
+
+.new_item:nth-child(2) {
+  background: url("./../../../assets/main-bg.jpg");
+  background-size: cover;
+}
+
+.new_item:nth-child(3) {
+  background: url("./../../../assets/new-03-bg.jpg");
+  background-size: cover;
+}
+
+.new_item:hover .cover {
+  transform: translateY(15px);
+}
+
+.new_item:hover .vinyl {
+  transform: translateY(-15px);
+}
+
+.new_item_playbtn box-icon {
+  position: relative;
+  height: 65px;
+  width: 65px;
+  margin: 0 15px 0 -30px;
+  z-index: 1;
+}
+
+.new_item_content_title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.new_item-content_text {
+  max-width: 300px;
+}
+
+.new_item_content_title,
+.new_item_content_text,
+.new_item_content_stats,
+.new_item_playbtn i {
+  text-shadow: 1px 0 5px #474747, 0 1px 5px #474747, -1px 0 5px #474747;
+  margin-bottom: 10px;
+}

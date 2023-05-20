@@ -1,0 +1,29 @@
+/* ==================== MAIN ====================== */
+
+.main {
+  grid-area: m;
+  position: relative;
+  min-height: calc(100vh - 20px);
+  overflow: hidden;
+  background: url("./../../assets/main-bg.jpg");
+  /* background-color: var(--bg-color); */
+  color: var(--font-light);
+  padding: 10px;
+  z-index: 0;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, #18191a 50%, #18191ab4 80%, #00000000 100%);
+  z-index: 1;
+}
+
+.main_content{
+  position: relative;
+  z-index: 2;
+}
