@@ -1,7 +1,7 @@
 import style from "./Navigation.module.scss";
 import user from "../../assets/user.webp";
-import { Link } from "react-router-dom";
-import {BsSpotify, BsSearch, BsFillCaretDownFill} from "react-icons/bs";
+import { Link, NavLink } from "react-router-dom";
+import { BsSpotify, BsSearch, BsFillCaretDownFill } from "react-icons/bs";
 
 const Navigation = () => {
     return (
@@ -9,16 +9,18 @@ const Navigation = () => {
             <div className={style.menu}>
                 <ul className={style.menu_items}>
                     <li className={style.menu_item}>
-                        <BsSpotify className={style.logo_icon} />
+                        <BsSpotify className={style.logo_icon}/>
                     </li>
                     <li className={style.menu_item}>
-                        <Link to="/" className={style.active}>Home</Link>
+                        <NavLink to="/" className={({isActive}) => isActive ? style.active : ""}>Home</NavLink>
                     </li>
                     <li className={style.menu_item}>
-                        <Link to="/explore">My Library</Link>
+                        <NavLink to="/explore" className={({isActive}) => isActive ? style.active : ""}>My
+                            Library</NavLink>
                     </li>
                     <li className={style.menu_item}>
-                        <Link to="/playlists">Playlists</Link>
+                        <NavLink to="/playlists"
+                                 className={({isActive}) => isActive ? style.active : ""}>Playlists</NavLink>
                     </li>
                 </ul>
             </div>
