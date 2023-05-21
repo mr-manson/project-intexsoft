@@ -1,4 +1,40 @@
-.recommend_items {
+.recommend {
+  position: relative;
   color: var(--font-light);
-  min-height: 250px;
+  z-index: 2;
+
+  &_title {
+    font-size: 20px;
+  }
+
+  &_items {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+  }
+
+  &_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./../../../assets/recommend/recommend-bg.webp");
+    background-size: cover;
+    min-width: 400px;
+    min-height: 140px;
+    margin-right: 20px;
+    padding: 10px 0;
+    & .title,
+    .recently-item .title {
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+}
+.arrow_icon {
+  font-size: 26px;
+  margin: 0 0 -5px 10px;
+
+  &:last-child {
+    margin-left: 0;
+  }
 }

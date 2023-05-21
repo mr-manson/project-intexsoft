@@ -3,7 +3,7 @@ import Player from "./Player/Player";
 import Navigation from "./Navigation/Navigation";
 import Main from "./Main/Main";
 import { Route, Routes } from "react-router-dom";
-import Explore from "./Explore/Explore";
+import Library from "./Library/Library";
 import Playlists from "./Playlists/Playlists";
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
                     <Navigation/>
                     <Routes>
                         <Route path="/" element={<Main/>} />
-                        <Route path="/explore" element={<Explore/>} />
+                        <Route path="/explore" element={<Library/>} />
                         <Route path="/playlists" element={<Playlists/>} />
                     </Routes>
                 </section>

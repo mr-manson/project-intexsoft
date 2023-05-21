@@ -5,6 +5,7 @@
   grid-area: p;
   padding: 20px 20px;
   background-color: var(--bg-color);
+  max-height: calc(100vh - 20px);
 }
 
 .nav_player {
@@ -81,6 +82,7 @@
   margin-bottom: 10px;
   font-size: 20px;
 }
+
 .main_player_info_artist {
   font-size: 14px;
   color: #919191;
@@ -171,6 +173,7 @@
   & a {
     transition: 0.5s;
     color: var(--font-light);
+
     &:hover {
       opacity: 0.7;
     }
@@ -185,6 +188,7 @@
     border-radius: 30px;
   }
 }
+
 .main_player_tools .lyrics .icon_text {
   margin: 0 0 0 10px;
 }

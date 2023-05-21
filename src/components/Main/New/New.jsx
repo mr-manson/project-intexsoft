@@ -1,9 +1,9 @@
 import style from "./New.module.scss";
 import vinyl from "../../../assets/vinyl.svg";
-import new_01 from "../../../assets/new-01.png";
-import new_02 from "../../../assets/new-02.png";
-import new_03 from "../../../assets/new-03.png";
-import "boxicons";
+import new_01 from "../../../assets/new-01.webp";
+import new_02 from "../../../assets/new-02.webp";
+import new_03 from "../../../assets/new-03.webp";
+import {BsPlayCircle} from "react-icons/bs";
 
 const New = () => {
     return (
@@ -18,7 +18,7 @@ const New = () => {
                     />
                 </div>
                 <div className={style.new_item_playbtn}>
-                    <a href="#" className={style.play}><box-icon name='play-circle' color='#ffffff' ></box-icon></a>
+                    <a href="#" className={style.play}><BsPlayCircle className={style.play_icon} /></a>
                 </div>
                 <div className={style.new_item_content}>
                     <div className={style.new_item_content_title}>One Love</div>
@@ -42,7 +42,7 @@ const New = () => {
                     />
                 </div>
                 <div className={style.new_item_playbtn}>
-                    <a href="#" className={style.play}><box-icon name='play-circle' color='#ffffff' ></box-icon></a>
+                    <a href="#" className={style.play}><BsPlayCircle className={style.play_icon} /></a>
                 </div>
                 <div className={style.new_item_content}>
                     <div className={style.new_item_content_title}>
@@ -69,7 +69,7 @@ const New = () => {
                     />
                 </div>
                 <div className={style.new_item_playbtn}>
-                    <a href="#" className={style.play}><box-icon name='play-circle' color='#ffffff' ></box-icon></a>
+                    <a href="#" className={style.play}><BsPlayCircle className={style.play_icon} /></a>
                 </div>
                 <div className={style.new_item_content}>
                     <div className={style.new_item_content_title}>Fresh Finds Rock</div>

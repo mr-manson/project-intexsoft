@@ -5,11 +5,11 @@
   position: relative;
   min-height: calc(100vh - 20px);
   overflow: hidden;
-  background: url("./../../assets/main-bg.jpg");
+  background: url("./../../assets/main-bg.webp");
   /* background-color: var(--bg-color); */
   color: var(--font-light);
   padding: 10px;
-  z-index: 0;
+  z-index: -10;
 }
 
 .main::before {

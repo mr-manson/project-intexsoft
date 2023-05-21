@@ -30,10 +30,9 @@
   0 -1px 5px #474747;
 }
 
-.menu_item box-icon {
-  height: 20px;
-  /*filter: drop-shadow(1px 0 5px #474747, 0 1px 5px #474747, -1px 0 5px #474747,
-          0 -1px 5px #474747);*/
+.logo_icon {
+  font-size: 16px;
+  color: var(--font-light);
 }
 
 .search {
@@ -46,8 +45,10 @@
   border-radius: 30px;
 }
 
-.search box-icon {
-  height: 16px;
+.search_icon {
+  font-size: 16px;
+  margin: 0 5px 0 0;
+  color: var(--font-light);
 }
 
 .user {
@@ -63,9 +64,9 @@
   padding: 5px;
 }
 
-.user box-icon {
-  height: 10px;
-  margin-top: 2px;
+.user_icon {
+  font-size: 10px;
+  margin-top: 5px;
   color: var(--font-light);
 }
 

@@ -10,6 +10,9 @@
     --font-light: #e7e7e7;
 }
 
+$bg-color: #242526;
+$font-light: #e7e7e7;
+
 html,
 body {
     border: none;
@@ -38,9 +41,9 @@ body {
     position: relative;
     min-height: calc(100vh - 20px);
     overflow: hidden;
-    background: url("./../assets/main-bg.jpg");
+    background: url("./../assets/main-bg.webp");
     /* background-color: var(--bg-color); */
-    color: var(--font-light);
+    color: $font-light;
     padding: 10px;
     z-index: 0;
     &::before {
