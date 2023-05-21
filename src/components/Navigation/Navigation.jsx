@@ -1,6 +1,7 @@
 import style from "./Navigation.module.scss";
 import user from "../../assets/user.jpg";
 import "boxicons";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
     return (
@@ -11,13 +12,13 @@ const Navigation = () => {
                         <box-icon type='logo' name='spotify' color='#ffffff'></box-icon>
                     </li>
                     <li className={style.menu_item}>
-                        <a href="#" className={style.active}>Home</a>
+                        <Link to="/" className={style.active}>Home</Link>
                     </li>
                     <li className={style.menu_item}>
-                        <a href="#">Explore</a>
+                        <Link to="/explore">Explore</Link>
                     </li>
                     <li className={style.menu_item}>
-                        <a href="#">Playlists</a>
+                        <Link to="/playlists">Playlists</Link>
                     </li>
                 </ul>
             </div>

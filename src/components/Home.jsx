@@ -2,6 +2,9 @@ import style from "./Home.module.scss";
 import Player from "./Player/Player";
 import Navigation from "./Navigation/Navigation";
 import Main from "./Main/Main";
+import { Route, Routes } from "react-router-dom";
+import Explore from "./Explore/Explore";
+import Playlists from "./Playlists/Playlists";
 
 const Home = () => {
     return (
@@ -9,7 +12,11 @@ const Home = () => {
             <div className={style.app_wrapper}>
                 <section className={style.main}>
                     <Navigation/>
-                    <Main/>
+                    <Routes>
+                        <Route path="/" element={<Main/>} />
+                        <Route path="/explore" element={<Explore/>} />
+                        <Route path="/playlists" element={<Playlists/>} />
+                    </Routes>
                 </section>
                 <Player/>
             </div>

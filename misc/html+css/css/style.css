@@ -238,12 +238,58 @@ body {
 
 /* === recently ===*/
 
-.recently-items {
+.recently {
   position: relative;
   color: var(--font-light);
-  min-height: 250px;
-
+  font-size: 20px;
   z-index: 2;
+}
+
+.recently-items {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.type {
+  display: flex;
+  font-size: 12px;
+  margin: 10px;
+}
+
+.type i {
+  margin-right: 10px;
+}
+
+.recently-item {
+  /* border: 2px solid white;  !!!!!!!! УБРАТЬ !!!!!!!! */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  min-width: 250px;
+  padding: 10px 0;
+}
+
+.artist img,
+.album img {
+  height: 175px;
+  width: auto;
+}
+
+.artist img {
+  border-radius: 50%;
+}
+
+.recently-item .name,
+.recently-item .title {
+  font-size: 16px;
+}
+
+.album .name {
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 /* ==================== PLAYER ==================== */
@@ -253,6 +299,7 @@ body {
   grid-area: p;
   padding: 20px 20px;
   background-color: var(--bg-color);
+  max-height: calc(100vh - 20px);
 }
 
 .nav-player {
