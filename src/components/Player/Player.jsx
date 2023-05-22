@@ -1,5 +1,7 @@
 import style from "./Player.module.scss";
 import "boxicons";
+import { BsRepeat, BsList, BsRewindFill, BsFastForwardFill, BsPlayCircle } from "react-icons/bs";
+import { BiDevices, BiVolumeFull, BiMicrophone } from "react-icons/bi";
 
 const Player = () => {
     return(
@@ -38,19 +40,18 @@ const Player = () => {
                     <div className={style.finish}>5:19</div>
                 </div>
                 <div className={style.main_player_controls}>
-                    <a href="#" className={style.repeat}><box-icon name='repeat' color='#ffffff' ></box-icon></a>
-                    <a href="#" className={style.rewind}><box-icon name='rewind' color='#ffffff' ></box-icon></a>
-                    <a href="#" className={style.play}><box-icon name='play-circle' color='#ffffff' ></box-icon></a>
-                    <a href="#" className={style.forward}><box-icon name='fast-forward' color='#ffffff' ></box-icon></a>
-                    <a href="#" className={style.playlist}><box-icon name='playlist' type='solid' color='#ffffff' ></box-icon></a>
+                    <a href="#" ><BsRepeat className={style.repeat_icon}/></a>
+                    <a href="#" ><BsRewindFill className={style.rewind_icon}/></a>
+                    <a href="#" ><BsPlayCircle className={style.play_icon}/></a>
+                    <a href="#" ><BsFastForwardFill className={style.forward_icon}/></a>
+                    <a href="#" ><BsList className={style.playlist_icon} /></a>
                 </div>
                 <div className={style.main_player_tools}>
-                    <a href="#" className={style.devices}><box-icon name='devices' color='#ffffff' ></box-icon></a>
-                    <a href="#" className={style.lyrics}>
-                        <box-icon name='microphone' color='#ffffff' ></box-icon>
+                    <a href="#" ><BiDevices className={style.devices_icon}/></a>
+                    <a href="#" className={style.lyrics}><BiMicrophone className={style.microphone_icon}/>
                         <p className={style.icon_text}>Show lyrics</p>
                     </a>
-                    <a href="#" className={style.volume}><box-icon name='volume-full' color='#ffffff' ></box-icon></a>
+                    <a href="#" ><BiVolumeFull className={style.volume_icon} /></a>
                 </div>
             </div>
         </section>

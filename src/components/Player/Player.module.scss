@@ -135,26 +135,19 @@
   opacity: 0.7;
 }
 
-.main-player-controls a:hover {
-  opacity: 0.7;
+.play_icon {
+  font-size: 60px;
 }
 
-.main_player_controls .play box-icon {
-  height: 60px;
-  width: 60px;
+.repeat_icon,
+.playlist_icon {
+  font-size: 18px;
+  margin-bottom: 6px;
 }
 
-.main_player_controls .repeat box-icon,
-.main_player_controls .playlist box-icon {
-  height: 18px;
-  width: 18px;
-  margin-bottom: 22px;
-}
-
-.main_player_controls .rewind box-icon,
-.main_player_controls .forward box-icon {
-  height: 40px;
-  width: 40px;
+.rewind_icon,
+.forward_icon {
+  font-size: 30px;
 }
 
 .main_player_controls a:not(:last-child) {
@@ -187,6 +180,15 @@
     padding: 7px 15px;
     border-radius: 30px;
   }
+}
+
+.devices_icon,
+.volume_icon{
+  font-size: 25px;
+}
+
+.microphone_icon{
+  font-size: 20px;
 }
 
 .main_player_tools .lyrics .icon_text {

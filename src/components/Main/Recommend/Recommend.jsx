@@ -1,6 +1,5 @@
 import style from "./Recommend.module.scss";
 import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
-import recommend_bg from "./../../../assets/recommend/recommend-bg.webp";
 
 const Recommend = () => {
     return(
