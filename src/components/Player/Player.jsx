@@ -40,18 +40,18 @@ const Player = () => {
                     <div className={style.finish}>5:19</div>
                 </div>
                 <div className={style.main_player_controls}>
-                    <a href="#" ><BsRepeat className={style.repeat_icon}/></a>
-                    <a href="#" ><BsRewindFill className={style.rewind_icon}/></a>
-                    <a href="#" ><BsPlayCircle className={style.play_icon}/></a>
-                    <a href="#" ><BsFastForwardFill className={style.forward_icon}/></a>
-                    <a href="#" ><BsList className={style.playlist_icon} /></a>
+                    <div><BsRepeat className={style.repeat_icon}/></div>
+                    <div><BsRewindFill className={style.rewind_icon}/></div>
+                    <div><BsPlayCircle className={style.play_icon}/></div>
+                    <div><BsFastForwardFill className={style.forward_icon}/></div>
+                    <div><BsList className={style.playlist_icon} /></div>
                 </div>
                 <div className={style.main_player_tools}>
-                    <a href="#" ><BiDevices className={style.devices_icon}/></a>
-                    <a href="#" className={style.lyrics}><BiMicrophone className={style.microphone_icon}/>
+                    <div><BiDevices className={style.devices_icon}/></div>
+                    <div className={style.lyrics}><BiMicrophone className={style.microphone_icon}/>
                         <p className={style.icon_text}>Show lyrics</p>
-                    </a>
-                    <a href="#" ><BiVolumeFull className={style.volume_icon} /></a>
+                    </div>
+                    <div><BiVolumeFull className={style.volume_icon} /></div>
                 </div>
             </div>
         </section>
