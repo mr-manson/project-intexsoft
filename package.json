@@ -7,7 +7,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
-    "boxicons": "^2.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
@@ -41,5 +40,6 @@
   },
   "devDependencies": {
     "sass": "^1.62.1"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

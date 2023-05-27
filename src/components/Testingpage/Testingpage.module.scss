@@ -1,9 +1,26 @@
 .test_main{
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 25px;
   z-index: 10;
 }
 
+.title{
+  display: flex;
+  font-size: 25px;
+  color: #fff;
+  margin: 10px;
+}
+
+.test_icon{
+  font-size: 25px;
+  color: #fff;
+  margin-right: 10px;
+}
+
+audio{
+  margin-top: 10px;
+}

@@ -18,7 +18,7 @@ const New = () => {
                     />
                 </div>
                 <div className={style.new_item_playbtn}>
-                    <a href="#" className={style.play}><BsPlayCircle className={style.play_icon} /></a>
+                    <div className={style.play}><BsPlayCircle className={style.play_icon} /></div>
                 </div>
                 <div className={style.new_item_content}>
                     <div className={style.new_item_content_title}>One Love</div>
@@ -42,7 +42,7 @@ const New = () => {
                     />
                 </div>
                 <div className={style.new_item_playbtn}>
-                    <a href="#" className={style.play}><BsPlayCircle className={style.play_icon} /></a>
+                    <div className={style.play}><BsPlayCircle className={style.play_icon} /></div>
                 </div>
                 <div className={style.new_item_content}>
                     <div className={style.new_item_content_title}>
@@ -69,7 +69,7 @@ const New = () => {
                     />
                 </div>
                 <div className={style.new_item_playbtn}>
-                    <a href="#" className={style.play}><BsPlayCircle className={style.play_icon} /></a>
+                    <div className={style.play}><BsPlayCircle className={style.play_icon} /></div>
                 </div>
                 <div className={style.new_item_content}>
                     <div className={style.new_item_content_title}>Fresh Finds Rock</div>

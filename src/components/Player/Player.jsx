@@ -1,5 +1,4 @@
 import style from "./Player.module.scss";
-import "boxicons";
 import { BsRepeat, BsList, BsRewindFill, BsFastForwardFill, BsPlayCircle } from "react-icons/bs";
 import { BiDevices, BiVolumeFull, BiMicrophone, BiDownload, BiFullscreen } from "react-icons/bi";
 import { SiDiscogs } from "react-icons/si";
