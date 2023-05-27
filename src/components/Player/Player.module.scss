@@ -20,18 +20,16 @@
 
 .nav_player_item_link {
   transition: 0.5s;
+  cursor: pointer;
 }
 
-.nav_player_item_link box-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
-  width: 30px;
+.disc_icon,
+.download_icon,
+.fullscreen_icon {
+  font-size: 30px;
   padding: 7px;
   margin: 0 7px 0 0;
   background-color: gray;
-  font-size: 16px;
   color: var(--font-light);
   border-radius: 50%;
 }
@@ -84,6 +82,10 @@
 .main_player_info_artist {
   font-size: 14px;
   color: #919191;
+}
+
+.start, .finish {
+  opacity: 1;
 }
 
 .main_player_progress {

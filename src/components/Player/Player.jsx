@@ -1,25 +1,26 @@
 import style from "./Player.module.scss";
 import "boxicons";
 import { BsRepeat, BsList, BsRewindFill, BsFastForwardFill, BsPlayCircle } from "react-icons/bs";
-import { BiDevices, BiVolumeFull, BiMicrophone } from "react-icons/bi";
+import { BiDevices, BiVolumeFull, BiMicrophone, BiDownload, BiFullscreen } from "react-icons/bi";
+import { SiDiscogs } from "react-icons/si";
 
 const Player = () => {
     return(
         <section className={style.player}>
             <nav className={style.nav_player}>
                 <div className={style.nav_player_left_items}>
-                    <a href="#" className={style.nav_player_item_link}>
-                        <box-icon name='disc' color='#ffffff' ></box-icon>
-                        <p className={style.icon_text}>Discover</p>
-                    </a>
+                    <div className={style.nav_player_item_link}> {/*TODO переделать структуру кнопки*/}
+                        <SiDiscogs className={style.disc_icon}/>
+                        <p className={style.icon_text}>Discogs</p>
+                    </div>
                 </div>
                 <div className={style.nav_player_right_items}>
-                    <a href="#" className={style.nav_player_item_link}>
-                        <box-icon name='download' color='#ffffff' ></box-icon>
-                    </a>
-                    <a href="#" className={style.nav_player_item_link}>
-                        <box-icon name='fullscreen' color='#ffffff' ></box-icon>
-                    </a>
+                    <div className={style.nav_player_item_link}>
+                        <BiDownload className={style.download_icon}/>
+                    </div>
+                    <div className={style.nav_player_item_link}>
+                        <BiFullscreen className={style.fullscreen_icon}/>
+                    </div>
                 </div>
             </nav>
             <div className={style.main_player}>

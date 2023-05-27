@@ -5,6 +5,7 @@ import Main from "./Main/Main";
 import { Route, Routes } from "react-router-dom";
 import Library from "./Library/Library";
 import Playlists from "./Playlists/Playlists";
+import Testingpage from "./Testingpage/Testingpage";
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
                         <Route path="/" element={<Main/>} />
                         <Route path="/explore" element={<Library/>} />
                         <Route path="/playlists" element={<Playlists/>} />
+                        <Route path="/test" element={<Testingpage/>} />
                     </Routes>
                 </section>
                 <Player/>
