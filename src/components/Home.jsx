@@ -5,7 +5,7 @@ import Main from "./Main/Main";
 import { Route, Routes } from "react-router-dom";
 import Library from "./Library/Library";
 import Playlists from "./Playlists/Playlists";
-import Testingpage from "./Testingpage/Testingpage";
+import TestingPage from "./Testingpage/TestingPage";
 
 const Home = () => {
     return (
@@ -17,7 +17,7 @@ const Home = () => {
                         <Route path="/" element={<Main/>} />
                         <Route path="/explore" element={<Library/>} />
                         <Route path="/playlists" element={<Playlists/>} />
-                        <Route path="/test" element={<Testingpage/>} />
+                        <Route path="/test" element={<TestingPage/>} />
                     </Routes>
                 </section>
                 <Player/>
