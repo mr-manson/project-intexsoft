@@ -7,10 +7,11 @@ const TestingPage = () => {
 
     const [data, setData] = useState();
     useEffect(() => {
-        (async function getData() {
+        const getData = async () => {
             const res = await axios.get("http://localhost:5000/api/todo/1");
             setData(res.data.content);
-        })()
+        }
+        getData();
     }, []);
 
 
