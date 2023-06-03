@@ -15,12 +15,12 @@ const Navigation = () => {
                         <NavLink to="/" className={({isActive}) => isActive ? style.active : ""}>Home</NavLink>
                     </li>
                     <li className={style.menu_item}>
-                        <NavLink to="/explore" className={({isActive}) => isActive ? style.active : ""}>My
-                            Library</NavLink>
+                        <NavLink to="/explore"
+                                 className={({isActive}) => isActive ? style.active : ""}>Explore</NavLink>
                     </li>
                     <li className={style.menu_item}>
-                        <NavLink to="/playlists"
-                                 className={({isActive}) => isActive ? style.active : ""}>Playlists</NavLink>
+                        <NavLink to="/library" className={({isActive}) => isActive ? style.active : ""}>My
+                            Library</NavLink>
                     </li>
                     <li className={style.menu_item}>
                         <NavLink to="/test"
@@ -28,10 +28,10 @@ const Navigation = () => {
                     </li>
                 </ul>
             </div>
-            <div className={style.search}>
+            {/*<div className={style.search}>
                 <BsSearch className={style.search_icon}/>
                 <p className={style.icon_text}>Search</p>
-            </div>
+            </div>*/}
             <div className={style.user}>
                 <div className={style.user_box}>
                     <img src={user} alt="user"/>

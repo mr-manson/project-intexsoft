@@ -10,12 +10,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-.nav_player_right_items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &_right_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .nav_player_item_link {
@@ -57,35 +57,37 @@
   justify-content: center;
   align-items: center;
   color: var(--font-light);
-}
 
-.main_player_status {
-  font-size: 24px;
-  margin: 50px auto 40px;
-}
+  &_status {
+    font-size: 24px;
+    margin: 50px auto 40px;
+  }
 
-.main_player_cover img {
-  height: 330px;
-  width: 330px;
-}
+  &_cover {
+    height: 330px;
+    width: 330px;
 
-.main_player_info {
-  margin: 40px auto;
-  text-align: center;
-}
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 
-.main_player_info_track {
-  margin-bottom: 10px;
-  font-size: 20px;
-}
+  &_info {
+    margin: 40px auto;
+    text-align: center;
 
-.main_player_info_artist {
-  font-size: 14px;
-  color: #919191;
-}
+    &_track {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
 
-.start, .finish {
-  opacity: 1;
+    &_artist {
+      font-size: 14px;
+      color: #919191;
+    }
+  }
+
 }
 
 .main_player_progress {

@@ -1,10 +1,50 @@
 import style from "./Player.module.scss";
-import { BsRepeat, BsList, BsRewindFill, BsFastForwardFill, BsPlayCircle } from "react-icons/bs";
+import { BsRepeat, BsList, BsRewindFill, BsFastForwardFill, BsPlayCircle, BsPauseCircle } from "react-icons/bs";
 import { BiDevices, BiVolumeFull, BiMicrophone, BiDownload, BiFullscreen } from "react-icons/bi";
 import { SiDiscogs } from "react-icons/si";
+import { useRef, useState } from "react";
 
 const Player = () => {
-    return(
+    let playlist = [
+        "1RH1rm06m9D4Dnh1yTFWck66BVo3MmC2z",
+        "1_x0W8lFaNUM9VioFW2TJ2x-3JdL8ZAMK",
+        "13COvQA9OHsSiIOrvQN4W9ilB9OvgCIww",
+        "1PAqxk7eQiqTHvi9jVq6HDoov1Y2Uc7cH",
+        "1WtFk0_9NUEWJA9rBZ5ztHMXOt5C7rjd3"
+    ];
+
+    const audio = useRef();
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [index, setIndex] = useState(0);
+
+    const link = "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=";
+    let trackId = playlist[index];
+    const trackLink = `${link}${trackId}`;
+
+
+    /*--BUTTONS-------------------------------------------------*/
+    const togglePlay = () => {
+        if (!isPlaying) {
+            audio.current.play()
+        } else {
+            audio.current.pause()
+        }
+        setIsPlaying(prev => !prev)
+    };
+
+    const toggleFastForward = () => {
+        if (index >= playlist.length - 1) {
+            setIndex(0);
+            trackId = playlist[0];
+            audio.current.play();
+        } else {
+            trackId = playlist[setIndex(prev => prev + 1)];
+            audio.current.play();
+        }
+    }
+    /*--/BUTTONS------------------------------------------------*/
+
+    return (
         <section className={style.player}>
             <nav className={style.nav_player}>
                 <div className={style.nav_player_left_items}>
@@ -42,16 +82,20 @@ const Player = () => {
                 <div className={style.main_player_controls}>
                     <div><BsRepeat className={style.repeat_icon}/></div>
                     <div><BsRewindFill className={style.rewind_icon}/></div>
-                    <div><BsPlayCircle className={style.play_icon}/></div>
-                    <div><BsFastForwardFill className={style.forward_icon}/></div>
-                    <div><BsList className={style.playlist_icon} /></div>
+                    <div className={style.play_icon} onClick={togglePlay}>{isPlaying ? <BsPauseCircle/> :
+                        <BsPlayCircle/>}</div>
+                    <div className={style.forward_icon} onClick={toggleFastForward}><BsFastForwardFill/></div>
+                    <div><BsList className={style.playlist_icon}/></div>
                 </div>
+
+                <audio ref={audio} controls src={trackLink}/>
+
                 <div className={style.main_player_tools}>
                     <div><BiDevices className={style.devices_icon}/></div>
                     <div className={style.lyrics}><BiMicrophone className={style.microphone_icon}/>
                         <p className={style.icon_text}>Show lyrics</p>
                     </div>
-                    <div><BiVolumeFull className={style.volume_icon} /></div>
+                    <div><BiVolumeFull className={style.volume_icon}/></div>
                 </div>
             </div>
         </section>
