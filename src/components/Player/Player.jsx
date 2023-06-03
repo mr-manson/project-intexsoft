@@ -4,6 +4,7 @@ import { BiDevices, BiVolumeFull, BiMicrophone, BiDownload, BiFullscreen } from 
 import { SiDiscogs } from "react-icons/si";
 import { useRef, useState } from "react";
 
+
 const Player = () => {
     let playlist = [
         "1RH1rm06m9D4Dnh1yTFWck66BVo3MmC2z",
@@ -21,7 +22,6 @@ const Player = () => {
     let trackId = playlist[index];
     const trackLink = `${link}${trackId}`;
 
-
     /*--BUTTONS-------------------------------------------------*/
     const togglePlay = () => {
         if (!isPlaying) {
@@ -36,10 +36,35 @@ const Player = () => {
         if (index >= playlist.length - 1) {
             setIndex(0);
             trackId = playlist[0];
-            audio.current.play();
+            setTimeout(() => {
+                audio.current.play()
+            }, 1000)
+            setIsPlaying(true);
         } else {
-            trackId = playlist[setIndex(prev => prev + 1)];
-            audio.current.play();
+            setIndex(prev => prev + 1)
+            trackId = playlist[index];
+            setTimeout(() => {
+                audio.current.play()
+            }, 1000)
+            setIsPlaying(true);
+        }
+    }
+
+    const toggleRewind = () => {
+        if (index <= 0) {
+            setIndex(playlist.length - 1);
+            trackId = playlist[index];
+            setTimeout(() => {
+                audio.current.play()
+            }, 1000)
+            setIsPlaying(true);
+        } else {
+            setIndex(prev => prev - 1)
+            trackId = playlist[index];
+            setTimeout(() => {
+                audio.current.play()
+            }, 1000)
+            setIsPlaying(true);
         }
     }
     /*--/BUTTONS------------------------------------------------*/
@@ -81,7 +106,7 @@ const Player = () => {
                 </div>
                 <div className={style.main_player_controls}>
                     <div><BsRepeat className={style.repeat_icon}/></div>
-                    <div><BsRewindFill className={style.rewind_icon}/></div>
+                    <div className={style.rewind_icon} onClick={toggleRewind}><BsRewindFill /></div>
                     <div className={style.play_icon} onClick={togglePlay}>{isPlaying ? <BsPauseCircle/> :
                         <BsPlayCircle/>}</div>
                     <div className={style.forward_icon} onClick={toggleFastForward}><BsFastForwardFill/></div>
