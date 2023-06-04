@@ -5,24 +5,25 @@ import { SiDiscogs } from "react-icons/si";
 import { useRef, useState } from "react";
 
 
-const Player = () => {
-    let playlist = [
-        "1RH1rm06m9D4Dnh1yTFWck66BVo3MmC2z",
-        "1_x0W8lFaNUM9VioFW2TJ2x-3JdL8ZAMK",
-        "13COvQA9OHsSiIOrvQN4W9ilB9OvgCIww",
-        "1PAqxk7eQiqTHvi9jVq6HDoov1Y2Uc7cH",
-        "1WtFk0_9NUEWJA9rBZ5ztHMXOt5C7rjd3"
-    ];
+const Player = (props) => {
 
     const audio = useRef();
     const [isPlaying, setIsPlaying] = useState(false);
     const [index, setIndex] = useState(0);
 
     const link = "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=";
-    let trackId = playlist[index];
+    let trackId = props.playlist[index].link;
     const trackLink = `${link}${trackId}`;
 
     /*--BUTTONS-------------------------------------------------*/
+    const play = () => {
+        if (isPlaying) {
+            setTimeout(() => {
+                audio.current.play()
+            }, 500)
+        }
+    };
+
     const togglePlay = () => {
         if (!isPlaying) {
             audio.current.play()
@@ -33,38 +34,26 @@ const Player = () => {
     };
 
     const toggleFastForward = () => {
-        if (index >= playlist.length - 1) {
+        if (index >= props.playlist.length - 1) {
             setIndex(0);
-            trackId = playlist[0];
-            setTimeout(() => {
-                audio.current.play()
-            }, 1000)
-            setIsPlaying(true);
+            trackId = props.playlist[0];
+            play();
         } else {
             setIndex(prev => prev + 1)
-            trackId = playlist[index];
-            setTimeout(() => {
-                audio.current.play()
-            }, 1000)
-            setIsPlaying(true);
+            trackId = props.playlist[index];
+            play();
         }
     }
 
     const toggleRewind = () => {
         if (index <= 0) {
-            setIndex(playlist.length - 1);
-            trackId = playlist[index];
-            setTimeout(() => {
-                audio.current.play()
-            }, 1000)
-            setIsPlaying(true);
+            setIndex(props.playlist.length - 1);
+            trackId = props.playlist[index];
+            play();
         } else {
             setIndex(prev => prev - 1)
-            trackId = playlist[index];
-            setTimeout(() => {
-                audio.current.play()
-            }, 1000)
-            setIsPlaying(true);
+            trackId = props.playlist[index];
+            play();
         }
     }
     /*--/BUTTONS------------------------------------------------*/
@@ -96,7 +85,7 @@ const Player = () => {
                     />
                 </div>
                 <div className={style.main_player_info}>
-                    <div className={style.main_player_info_track}>Morning</div>
+                    <div className={style.main_player_info_track}>{props.playlist[index].title}</div>
                     <div className={style.main_player_info_artist}>Beck</div>
                 </div>
                 <div className={style.main_player_progress}>
@@ -106,7 +95,7 @@ const Player = () => {
                 </div>
                 <div className={style.main_player_controls}>
                     <div><BsRepeat className={style.repeat_icon}/></div>
-                    <div className={style.rewind_icon} onClick={toggleRewind}><BsRewindFill /></div>
+                    <div className={style.rewind_icon} onClick={toggleRewind}><BsRewindFill/></div>
                     <div className={style.play_icon} onClick={togglePlay}>{isPlaying ? <BsPauseCircle/> :
                         <BsPlayCircle/>}</div>
                     <div className={style.forward_icon} onClick={toggleFastForward}><BsFastForwardFill/></div>
