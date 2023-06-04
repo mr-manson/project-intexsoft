@@ -2,7 +2,8 @@ import style from "./Player.module.scss";
 import { BsRepeat, BsList, BsRewindFill, BsFastForwardFill, BsPlayCircle, BsPauseCircle } from "react-icons/bs";
 import { BiDevices, BiVolumeFull, BiMicrophone, BiDownload, BiFullscreen } from "react-icons/bi";
 import { SiDiscogs } from "react-icons/si";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { formatTime } from "../../tools/tools";
 
 
 const Player = (props) => {
@@ -10,17 +11,30 @@ const Player = (props) => {
     const audio = useRef();
     const [isPlaying, setIsPlaying] = useState(false);
     const [index, setIndex] = useState(0);
+    const [elapsed, setElapsed] = useState(0);
+    const [duration, setDuration] = useState(0);
 
     const link = "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=";
     let trackId = props.playlist[index].link;
     const trackLink = `${link}${trackId}`;
 
     /*--BUTTONS-------------------------------------------------*/
+
+    useEffect(() => {
+        if (isPlaying) {
+            setInterval(() => {
+                setDuration(Math.floor(audio?.current?.duration));
+                setElapsed(Math.floor(audio?.current?.currentTime));
+            }, 100);
+        }
+    }, [isPlaying, duration])
+
+
     const play = () => {
         if (isPlaying) {
             setTimeout(() => {
                 audio.current.play()
-            }, 500)
+            }, 100)
         }
     };
 
@@ -49,12 +63,11 @@ const Player = (props) => {
         if (index <= 0) {
             setIndex(props.playlist.length - 1);
             trackId = props.playlist[index];
-            play();
         } else {
             setIndex(prev => prev - 1)
             trackId = props.playlist[index];
-            play();
         }
+        play();
     }
     /*--/BUTTONS------------------------------------------------*/
 
@@ -89,9 +102,9 @@ const Player = (props) => {
                     <div className={style.main_player_info_artist}>Beck</div>
                 </div>
                 <div className={style.main_player_progress}>
-                    <div className={style.start}>0:32</div>
+                    <div className={style.start}>{formatTime(elapsed)}</div>
                     <div className={style.progress_bar}></div>
-                    <div className={style.finish}>5:19</div>
+                    <div className={style.finish}>{formatTime(duration - elapsed)}</div>
                 </div>
                 <div className={style.main_player_controls}>
                     <div><BsRepeat className={style.repeat_icon}/></div>

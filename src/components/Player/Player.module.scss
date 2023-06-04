@@ -99,10 +99,15 @@
   margin: 0 10px 30px;
 }
 
+.start, .finish {
+  min-width: 40px;
+  text-align: center;
+}
+
 .progress_bar {
   position: relative;
   background-color: #ffffff65;
-  width: 100%;
+  width: 90%;
   height: 5px;
   margin: 0 10px;
   z-index: 1;
@@ -186,10 +191,6 @@
       margin: 0 0 0 10px;
     }
   }
-}
-
-.start, .finish {
-  opacity: 1;
 }
 
 .devices_icon,
