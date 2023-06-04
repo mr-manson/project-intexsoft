@@ -6,6 +6,7 @@ import { SiDiscogs } from "react-icons/si";
 import { formatTime } from "../../tools/tools";
 import Cover from "./Cover/Cover";
 import Volume from "./Volume/Volume";
+import Lyrics from "./Lyrics/Lyrics";
 
 const Player = (props) => {
 
@@ -70,6 +71,7 @@ const Player = (props) => {
             trackId = props.playlist[index];
             play();
         }
+        setShowLyrics(false);
     }
 
     const toggleRewind = () => {
@@ -81,16 +83,13 @@ const Player = (props) => {
             trackId = props.playlist[index];
         }
         play();
+        setShowLyrics(false);
     }
 
     const setProgress = (e) => {
         const progressWidth = progress?.current?.clientWidth;
         const clickPosition = e.nativeEvent.offsetX;
         audio.current.currentTime = clickPosition / progressWidth * duration;
-    }
-
-    const showLyricsText = () => {
-        setShowLyrics(prev => !prev);
     }
 
     /*--/BUTTONS------------------------------------------------*/
@@ -137,14 +136,8 @@ const Player = (props) => {
                     <div className={style.playlist_icon}><BsList/></div>
                 </div>
                 <div className={style.main_player_tools}>
-                    <Volume/>
-                    <div className={style.lyrics_box}>
-                        <div className={style.lyrics} onClick={showLyricsText}>
-                            <div className={style.microphone_icon}><BiMicrophone/></div>
-                            <p className={style.icon_text}>Show lyrics</p>
-                        </div>
-                        <div className={`${style.lyrics_text} ${showLyrics ? "" : style.hide}`}>{props.playlist[index].lyrics}</div>
-                    </div>
+                    <Volume audio={audio}/>
+                    <Lyrics lyrics={props.playlist[index].lyrics} showLyrics={showLyrics} setShowLyrics={setShowLyrics} />
                 </div>
             </div>
         </section>

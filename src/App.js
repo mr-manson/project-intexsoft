@@ -22,25 +22,96 @@ function App() {
             author: "Beck",
             album: "Morning Phase",
             title: "Morning",
-            lyrics: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut, cum doloribus ducimus inventore ipsum magnam natus odio perferendis quae quibusdam repudiandae rerum sunt suscipit tempora tempore tenetur voluptates? Dolores!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut, cum doloribus ducimus inventore ipsum magnam natus odio perferendis quae quibusdam repudiandae rerum sunt suscipit tempora tempore tenetur voluptates? Dolores!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut, cum doloribus ducimus inventore ipsum magnam natus odio perferendis quae quibusdam repudiandae rerum sunt suscipit tempora tempore tenetur voluptates? Dolores!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut, cum doloribus ducimus inventore ipsum magnam natus odio perferendis quae quibusdam repudiandae rerum sunt suscipit tempora tempore tenetur voluptates? Dolores!",
+            lyrics: `
+             Lorem ipsum dolor sit amet,
+             consectetur adipisicing elit.
+             Asperiores aut, cum doloribus
+             ducimus inventore ipsum magnam
+             
+             natus odio perferendis quae
+             quibusdam repudiandae rerum
+             sunt suscipit tempora tempore
+             tenetur voluptates? Dolores!
+             
+             Lorem ipsum dolor sit amet, 
+             consectetur adipisicing elit.
+             Asperiores aut, cum doloribus
+             ducimus inventore ipsum magnam
+             
+             natus odio perferendis quae
+             quibusdam repudiandae`,
         },
         {
             link: "13COvQA9OHsSiIOrvQN4W9ilB9OvgCIww",
             author: "Beck",
             album: "Morning Phase",
             title: "Heart Is a Drum",
+            lyrics: `
+             Lorem ipsum dolor sit amet,
+             consectetur adipisicing elit.
+             Asperiores aut, cum doloribus
+             ducimus inventore ipsum magnam
+             
+             natus odio perferendis quae
+             quibusdam repudiandae rerum
+             sunt suscipit tempora tempore
+             tenetur voluptates? Dolores!
+             
+             Lorem ipsum dolor sit amet, 
+             consectetur adipisicing elit.
+             Asperiores aut, cum doloribus
+             ducimus inventore ipsum magnam
+             
+             natus odio perferendis quae
+             quibusdam repudiandae`,
         },
         {
             link: "1PAqxk7eQiqTHvi9jVq6HDoov1Y2Uc7cH",
             author: "Beck",
             album: "Morning Phase",
             title: "Say Goodbye",
+            lyrics: `
+             Lorem ipsum dolor sit amet,
+             consectetur adipisicing elit.
+             Asperiores aut, cum doloribus
+             ducimus inventore ipsum magnam
+             
+             natus odio perferendis quae
+             quibusdam repudiandae rerum
+             sunt suscipit tempora tempore
+             tenetur voluptates? Dolores!
+             
+             Lorem ipsum dolor sit amet, 
+             consectetur adipisicing elit.
+             Asperiores aut, cum doloribus
+             ducimus inventore ipsum magnam
+             
+             natus odio perferendis quae
+             quibusdam repudiandae`,
         },
         {
             link: "1WtFk0_9NUEWJA9rBZ5ztHMXOt5C7rjd3",
             author: "Beck",
             album: "Morning Phase",
             title: "Blue Moon",
+            lyrics: `
+             Lorem ipsum dolor sit amet,
+             consectetur adipisicing elit.
+             Asperiores aut, cum doloribus
+             ducimus inventore ipsum magnam
+             
+             natus odio perferendis quae
+             quibusdam repudiandae rerum
+             sunt suscipit tempora tempore
+             tenetur voluptates? Dolores!
+             
+             Lorem ipsum dolor sit amet, 
+             consectetur adipisicing elit.
+             Asperiores aut, cum doloribus
+             ducimus inventore ipsum magnam
+             
+             natus odio perferendis quae
+             quibusdam repudiandae`,
         },
     ];
 
