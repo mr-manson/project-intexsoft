@@ -16,6 +16,7 @@ const Player = (props) => {
     const [duration, setDuration] = useState(0);
 
     const currentProgress = (current/duration) * 100;
+    const remaining = duration - current;
 
     const link = "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=";
     let trackId = props.playlist[index].link;
@@ -113,7 +114,7 @@ const Player = (props) => {
                     <div className={style.progress_container} ref={progress} onClick={setProgress}>
                         <div className={style.progress_bar} style={{width: `${currentProgress}%`}}></div>
                     </div>
-                    <div className={style.finish}>{formatTime(duration - current)}</div>
+                    <div className={style.finish}>{formatTime(remaining)}</div>
                 </div>
                 <div className={style.main_player_controls}>
                     <div><BsRepeat className={style.repeat_icon}/></div>
