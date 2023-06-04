@@ -5,6 +5,7 @@ import { BiDevices, BiDownload, BiFullscreen, BiMicrophone, BiVolumeFull } from 
 import { SiDiscogs } from "react-icons/si";
 import { formatTime } from "../../tools/tools";
 import Cover from "./Cover/Cover";
+import Volume from "./Volume/Volume";
 
 const Player = (props) => {
 
@@ -14,8 +15,9 @@ const Player = (props) => {
     const [index, setIndex] = useState(0);
     const [current, setCurrent] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [showLyrics, setShowLyrics] = useState(false);
 
-    const currentProgress = (current/duration) * 100;
+    const currentProgress = (current / duration) * 100;
     const remaining = duration - current;
 
     const link = "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=";
@@ -33,7 +35,13 @@ const Player = (props) => {
                 setCurrent(audio?.current?.currentTime);
             }, 10);
         }
-    }, [isPlaying, current, duration]);
+        if (remaining === 0) {
+            //setIndex(prev => prev + 1);
+        }
+
+        //console.log(audio?.current?.volume);
+
+    }, [isPlaying, duration, remaining]);
 
     const play = () => {
         if (isPlaying) {
@@ -41,6 +49,15 @@ const Player = (props) => {
                 audio?.current?.play();
             }, 100);
         }
+    };
+
+    const togglePlay = () => {
+        if (!isPlaying) {
+            audio?.current?.play();
+        } else {
+            audio?.current?.pause();
+        }
+        setIsPlaying(prev => !prev);
     };
 
     const toggleFastForward = () => {
@@ -66,19 +83,14 @@ const Player = (props) => {
         play();
     }
 
-    const togglePlay = () => {
-        if (!isPlaying) {
-            audio?.current?.play();
-        } else {
-            audio?.current?.pause();
-        }
-        setIsPlaying(prev => !prev);
-    };
-
     const setProgress = (e) => {
         const progressWidth = progress?.current?.clientWidth;
         const clickPosition = e.nativeEvent.offsetX;
         audio.current.currentTime = clickPosition / progressWidth * duration;
+    }
+
+    const showLyricsText = () => {
+        setShowLyrics(prev => !prev);
     }
 
     /*--/BUTTONS------------------------------------------------*/
@@ -109,7 +121,7 @@ const Player = (props) => {
                     <div className={style.main_player_info_track}>{props.playlist[index].title}</div>
                     <div className={style.main_player_info_artist}>Beck</div>
                 </div>
-                <div className={style.main_player_progress} >
+                <div className={style.main_player_progress}>
                     <div className={style.start}>{formatTime(current)}</div>
                     <div className={style.progress_container} ref={progress} onClick={setProgress}>
                         <div className={style.progress_bar} style={{width: `${currentProgress}%`}}></div>
@@ -117,19 +129,22 @@ const Player = (props) => {
                     <div className={style.finish}>{formatTime(remaining)}</div>
                 </div>
                 <div className={style.main_player_controls}>
-                    <div><BsRepeat className={style.repeat_icon}/></div>
+                    <div className={style.repeat_icon}><BsRepeat/></div>
                     <div className={style.rewind_icon} onClick={toggleRewind}><BsRewindFill/></div>
                     <div className={style.play_icon} onClick={togglePlay}>
                         {isPlaying ? <BsPauseCircle/> : <BsPlayCircle/>}</div>
                     <div className={style.forward_icon} onClick={toggleFastForward}><BsFastForwardFill/></div>
-                    <div><BsList className={style.playlist_icon}/></div>
+                    <div className={style.playlist_icon}><BsList/></div>
                 </div>
                 <div className={style.main_player_tools}>
-                    <div><BiDevices className={style.devices_icon}/></div>
-                    <div className={style.lyrics}><BiMicrophone className={style.microphone_icon}/>
-                        <p className={style.icon_text}>Show lyrics</p>
+                    <Volume/>
+                    <div className={style.lyrics_box}>
+                        <div className={style.lyrics} onClick={showLyricsText}>
+                            <div className={style.microphone_icon}><BiMicrophone/></div>
+                            <p className={style.icon_text}>Show lyrics</p>
+                        </div>
+                        <div className={`${style.lyrics_text} ${showLyrics ? "" : style.hide}`}>{props.playlist[index].lyrics}</div>
                     </div>
-                    <div><BiVolumeFull className={style.volume_icon}/></div>
                 </div>
             </div>
         </section>

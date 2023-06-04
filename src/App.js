@@ -15,12 +15,14 @@ function App() {
             author: "Beck",
             album: "Morning Phase",
             title: "Cycle",
+            lyrics: null,
         },
         {
             link: "1_x0W8lFaNUM9VioFW2TJ2x-3JdL8ZAMK",
             author: "Beck",
             album: "Morning Phase",
             title: "Morning",
+            lyrics: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut, cum doloribus ducimus inventore ipsum magnam natus odio perferendis quae quibusdam repudiandae rerum sunt suscipit tempora tempore tenetur voluptates? Dolores!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut, cum doloribus ducimus inventore ipsum magnam natus odio perferendis quae quibusdam repudiandae rerum sunt suscipit tempora tempore tenetur voluptates? Dolores!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut, cum doloribus ducimus inventore ipsum magnam natus odio perferendis quae quibusdam repudiandae rerum sunt suscipit tempora tempore tenetur voluptates? Dolores!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut, cum doloribus ducimus inventore ipsum magnam natus odio perferendis quae quibusdam repudiandae rerum sunt suscipit tempora tempore tenetur voluptates? Dolores!",
         },
         {
             link: "13COvQA9OHsSiIOrvQN4W9ilB9OvgCIww",
@@ -42,22 +44,22 @@ function App() {
         },
     ];
 
-  return (
-      <>
-        <div className={style.app_wrapper}>
-          <section className={style.main}>
-            <Navigation/>
-            <Routes>
-              <Route path="/" element={<Main/>} />
-              <Route path="/library" element={<Library/>} />
-              <Route path="/explore" element={<Explore/>} />
-              <Route path="/test" element={<TestingPage/>} />
-            </Routes>
-          </section>
-          <Player playlist={playlist}/>
-        </div>
-      </>
-  );
+    return (
+        <>
+            <div className={style.app_wrapper}>
+                <section className={style.main}>
+                    <Navigation/>
+                    <Routes>
+                        <Route path="/" element={<Main/>}/>
+                        <Route path="/library" element={<Library/>}/>
+                        <Route path="/explore" element={<Explore/>}/>
+                        <Route path="/test" element={<TestingPage/>}/>
+                    </Routes>
+                </section>
+                <Player playlist={playlist}/>
+            </div>
+        </>
+    );
 }
 
 export default App;

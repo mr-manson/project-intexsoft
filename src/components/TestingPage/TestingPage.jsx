@@ -25,9 +25,6 @@ const TestingPage = () => {
                 <GiTestTubes className={style.test_icon}/>
                 <p>THIS IS TESTING PAGE</p>
             </div>
-            <audio controls
-                   src={trackLink}>
-            </audio>
             {/*<div>Data from database - {data ? data : "nothing"}</div>*/}
         </div>
     )
