@@ -36,8 +36,9 @@ const Player = (props) => {
                 setCurrent(audio?.current?.currentTime);
             }, 10);
         }
-        if (remaining === 0) {
+        if (audio?.current?.ended) {
             //setIndex(prev => prev + 1);
+            console.log("aaaaaaaaaaaaaaaaaaaaa");
         }
 
         //console.log(audio?.current?.volume);

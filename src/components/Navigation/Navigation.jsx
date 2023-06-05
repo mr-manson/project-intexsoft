@@ -1,9 +1,17 @@
 import style from "./Navigation.module.scss";
-import user from "../../assets/user.webp";
+/*import user from "../../assets/user.webp";*/
 import { NavLink } from "react-router-dom";
 import { BsSpotify, BsSearch, BsFillCaretDownFill } from "react-icons/bs";
+import Login from "../Login/Login";
+import { useState } from "react";
 
 const Navigation = () => {
+    const [showLogin, setShowLogin] = useState(false);
+
+    const showLoginBox = () => {
+        setShowLogin(prev => !prev);
+    }
+
     return (
         <div className={style.nav_main}>
             <div className={style.menu}>
@@ -32,12 +40,16 @@ const Navigation = () => {
                 <BsSearch className={style.search_icon}/>
                 <p className={style.icon_text}>Search</p>
             </div>*/}
-            <div className={style.user}>
+            <div className={style.menu_login}>
+                <p onClick={showLoginBox}>Login</p>
+            </div>
+            <Login showLogin={showLogin}/>
+            {/*<div className={style.user}>
                 <div className={style.user_box}>
                     <img src={user} alt="user"/>
                     <BsFillCaretDownFill className={style.user_icon}/>
                 </div>
-            </div>
+            </div>*/}
         </div>
     )
 }
