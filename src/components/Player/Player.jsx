@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import style from "./Player.module.scss";
 import { BsFastForwardFill, BsList, BsPauseCircle, BsPlayCircle, BsRepeat, BsRewindFill } from "react-icons/bs";
-import { BiDevices, BiDownload, BiFullscreen, BiMicrophone, BiVolumeFull } from "react-icons/bi";
+import { BiDownload, BiFullscreen } from "react-icons/bi";
 import { SiDiscogs } from "react-icons/si";
 import { formatTime } from "../../tools/tools";
 import Cover from "./Cover/Cover";
@@ -29,21 +29,17 @@ const Player = (props) => {
 
     /*--BUTTONS-------------------------------------------------*/
 
+    const timeUpdate = (event) => {
+        setDuration(audio?.current?.duration);
+        setCurrent(audio?.current?.currentTime);
+    }
+
     useEffect(() => {
         if (isPlaying) {
-            setInterval(() => {
-                setDuration(audio?.current?.duration);
-                setCurrent(audio?.current?.currentTime);
-            }, 10);
+            setDuration(audio?.current?.duration);
+            setCurrent(audio?.current?.currentTime);
         }
-        if (audio?.current?.ended) {
-            //setIndex(prev => prev + 1);
-            console.log("aaaaaaaaaaaaaaaaaaaaa");
-        }
-
-        //console.log(audio?.current?.volume);
-
-    }, [isPlaying, duration, remaining]);
+    }, [isPlaying, duration, remaining, timeUpdate]);
 
     const play = () => {
         if (isPlaying) {
@@ -97,7 +93,7 @@ const Player = (props) => {
 
     return (
         <section className={style.player}>
-            <audio ref={audio} src={trackLink}/>
+            <audio ref={audio} src={trackLink} onEnded={toggleFastForward}/>
             <nav className={style.nav_player}>
                 <div className={style.nav_player_left_items}>
                     <div className={style.nav_player_item_link}> {/*TODO переделать структуру кнопки*/}
@@ -122,11 +118,11 @@ const Player = (props) => {
                     <div className={style.main_player_info_artist}>Beck</div>
                 </div>
                 <div className={style.main_player_progress}>
-                    <div className={style.start}>{formatTime(current)}</div>
+                    <div className={style.start} onTimeUpdate={timeUpdate}>{formatTime(current)}</div>
                     <div className={style.progress_container} ref={progress} onClick={setProgress}>
                         <div className={style.progress_bar} style={{width: `${currentProgress}%`}}></div>
                     </div>
-                    <div className={style.finish}>{formatTime(remaining)}</div>
+                    <div className={style.finish} onTimeUpdate={timeUpdate}>{formatTime(remaining)}</div>
                 </div>
                 <div className={style.main_player_controls}>
                     <div className={style.repeat_icon}><BsRepeat/></div>
@@ -138,7 +134,8 @@ const Player = (props) => {
                 </div>
                 <div className={style.main_player_tools}>
                     <Volume audio={audio}/>
-                    <Lyrics lyrics={props.playlist[index].lyrics} showLyrics={showLyrics} setShowLyrics={setShowLyrics} />
+                    <Lyrics lyrics={props.playlist[index].lyrics} showLyrics={showLyrics}
+                            setShowLyrics={setShowLyrics}/>
                 </div>
             </div>
         </section>
