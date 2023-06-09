@@ -93,9 +93,6 @@ const Player = (props) => {
                 </div>
                 <div className={style.nav_player_right_items}>
                     <div className={style.nav_player_item_link}>
-                        <BiDownload className={style.download_icon}/>
-                    </div>
-                    <div className={style.nav_player_item_link}>
                         <BiFullscreen className={style.fullscreen_icon}/>
                     </div>
                 </div>
