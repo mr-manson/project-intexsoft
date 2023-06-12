@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import style from "./Player.module.scss";
 import { BsFastForwardFill, BsList, BsPauseCircle, BsPlayCircle, BsRepeat, BsRewindFill } from "react-icons/bs";
-import { BiDownload, BiFullscreen } from "react-icons/bi";
+import { BiFullscreen } from "react-icons/bi";
 import { SiDiscogs } from "react-icons/si";
 import { formatTime } from "../../tools/tools";
 import Cover from "./Cover/Cover";

@@ -1,12 +1,16 @@
 import style from "./Navigation.module.scss";
 /*import user from "../../assets/user.webp";*/
-import { NavLink } from "react-router-dom";
-import { BsSpotify, BsSearch, BsFillCaretDownFill } from "react-icons/bs";
+import { NavLink, useNavigate } from "react-router-dom";
+import { BsCaretLeft, BsCaretRight, BsSpotify } from "react-icons/bs";
 import Login from "../Login/Login";
 import { useState } from "react";
 
 const Navigation = () => {
     const [showLogin, setShowLogin] = useState(false);
+    const navigate = useNavigate();
+    const goBack = () => navigate(-1);
+    const goForward = () => navigate(+1);
+
 
     const showLoginBox = () => {
         setShowLogin(prev => !prev);
@@ -18,6 +22,16 @@ const Navigation = () => {
                 <ul className={style.menu_items}>
                     <li className={style.menu_item}>
                         <BsSpotify className={style.logo_icon}/>
+                    </li>
+                    <li>
+                        <div className={style.history_block}>
+                            <div onClick={goBack}>
+                                <BsCaretLeft className={style.arrow_icon}/>
+                            </div>
+                            <div onClick={goForward}>
+                                <BsCaretRight className={style.arrow_icon}/>
+                            </div>
+                        </div>
                     </li>
                     <li className={style.menu_item}>
                         <NavLink to="/" className={({isActive}) => isActive ? style.active : ""}>Home</NavLink>

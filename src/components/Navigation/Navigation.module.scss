@@ -7,6 +7,17 @@
   padding: 10px 10px 30px;
 }
 
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.history_block{
+  display: flex;
+  margin-right: 20px;
+}
+
 .menu_items {
   position: relative;
   display: flex;
@@ -39,6 +50,15 @@
 .logo_icon {
   font-size: 16px;
   color: var(--font-light);
+}
+
+.arrow_icon {
+  font-size: 26px;
+  margin: 0 0 -5px 10px;
+
+  &:last-child {
+    margin-left: 0;
+  }
 }
 
 .search {
