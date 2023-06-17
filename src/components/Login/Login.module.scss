@@ -1,4 +1,4 @@
-.login_modal_container{
+.login_modal_container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,35 +11,102 @@
   z-index: 50;
 }
 
-.hide{
+.form_wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 500px;
+  width: 750px;
+  background: url("../../assets/form/bg.webp") no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.hide {
   display: none;
 }
 
-.form_box{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  height: 500px;
-  background-color: rgba(255, 0, 0, 0.61);
-  padding: 20px;
+.form{
+  width: 100%;
+  padding: 30px;
 }
 
-.form{}
-
-.field{
-  text-align: center;
-}
-
-.form_item{
+.form_box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px;
+  height: 100%;
+  width: 40%;
+  background-color: #ffffffc4;
+  border-radius: 5px;
+
 }
-.form_btn{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.form_title {
+  text-align: center;
+  color: #242526;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+
+.form_item {
+  position: relative;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.field {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #9b9b9b;
+  border-radius: 0;
+  background-color: transparent;
+  outline: none;
+  text-align: center;
+  transition: 0.3s;
+
+  &:focus {
+    border-bottom: 1px solid #252525;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #535353;
+  transition: 0.3s;
+  z-index: 0;
+}
+
+.form_error{
+  text-align: center;
+  color: red;
+}
+
+.field:focus ~ .label,
+.field:not(:placeholder-shown) ~ .label {
+  top: -18px;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.form_btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8c98c8;
+  outline: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover,
+  &:focus{
+    background-color: #a4b0dd;
+  }
 }

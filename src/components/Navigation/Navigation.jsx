@@ -23,16 +23,6 @@ const Navigation = () => {
                     <li className={style.menu_item}>
                         <BsSpotify className={style.logo_icon}/>
                     </li>
-                    <li>
-                        <div className={style.history_block}>
-                            <div onClick={goBack}>
-                                <BsCaretLeft className={style.arrow_icon}/>
-                            </div>
-                            <div onClick={goForward}>
-                                <BsCaretRight className={style.arrow_icon}/>
-                            </div>
-                        </div>
-                    </li>
                     <li className={style.menu_item}>
                         <NavLink to="/" className={({isActive}) => isActive ? style.active : ""}>Home</NavLink>
                     </li>
