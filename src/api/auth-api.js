@@ -10,7 +10,7 @@ export const userAPI = {
     async signIn(email, password) {
         const res = await api.post("signin", {email, password});
         return res.data;
-        console.log(res.data);
+        console.log(res);
     },
 
     async signOut() {

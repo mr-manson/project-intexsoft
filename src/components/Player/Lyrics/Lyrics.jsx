@@ -14,6 +14,7 @@ const Lyrics = (props) => {
                 <p className={style.icon_text}>Show lyrics</p>
             </div>
             <div className={`${style.lyrics_text} ${props.showLyrics ? "" : style.hide}`}>
+                <div className={style.lyrics_close} onClick={showLyricsText} cli={showLyricsText}>×</div>
                 <pre>{props.lyrics ? props.lyrics : "No Lyrics"}</pre>
             </div>
         </>

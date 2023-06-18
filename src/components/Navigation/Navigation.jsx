@@ -1,16 +1,12 @@
 import style from "./Navigation.module.scss";
 /*import user from "../../assets/user.webp";*/
-import { NavLink, useNavigate } from "react-router-dom";
-import { BsCaretLeft, BsCaretRight, BsSpotify } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
+import { BsSpotify } from "react-icons/bs";
 import Login from "../Login/Login";
 import { useState } from "react";
 
 const Navigation = () => {
     const [showLogin, setShowLogin] = useState(false);
-    const navigate = useNavigate();
-    const goBack = () => navigate(-1);
-    const goForward = () => navigate(+1);
-
 
     const showLoginBox = () => {
         setShowLogin(prev => !prev);
@@ -47,7 +43,7 @@ const Navigation = () => {
             <div className={style.menu_login}>
                 <p onClick={showLoginBox}>Login</p>
             </div>
-            <Login showLogin={showLogin}/>
+            <Login showLogin={showLogin} showLoginBox={showLoginBox}/>
             {/*<div className={style.user}>
                 <div className={style.user_box}>
                     <img src={user} alt="user"/>

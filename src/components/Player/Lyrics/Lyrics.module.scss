@@ -18,17 +18,24 @@
   }
 }
 
+.lyrics_close{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
 .microphone_icon {
   opacity: 1;
 }
 
 .lyrics_text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  min-height: 80%;
-  min-width: 90%;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
   padding: 20px;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.85);
