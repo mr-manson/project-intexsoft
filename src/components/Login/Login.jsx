@@ -2,9 +2,17 @@ import style from "./Login.module.scss";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import { userAPI } from "../../api/auth-api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { signUp } from "../../store/auth-reducer";
 
 const Login = (props) => {
+/*    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(signUp());
+    }, [dispatch])*/
+
     const [signInActive, setSignInActive] = useState(true);
     const [signUpActive, setSignUpActive] = useState(false);
 
@@ -35,7 +43,7 @@ const Login = (props) => {
                                 <div className={style.form_title}>Sign In</div>
                                 <div className={style.form_item}>
                                     <Field className={style.field} name={"email"} component={"input"} type={"text"}
-                                           placeholder=" "/>
+                                           placeholder=" " />
                                     <label className={style.label} htmlFor={"email"}>e-mail</label><br/>
                                     {errors.email && touched.email && (
                                         <div className={style.form_error}>{errors.email}</div>
@@ -60,7 +68,7 @@ const Login = (props) => {
                         validationSchema={validationSchema}
                         initialValues={{email: "", password: ""}}
                         onSubmit={(values) => {
-                            userAPI.signIn(values.email, values.password);
+                            userAPI.signUp(values.email, values.password);
                             console.log(values.email);
                         }}>
                         {({errors, touched}) => (

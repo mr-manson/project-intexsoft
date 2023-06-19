@@ -7,6 +7,7 @@ import { formatTime } from "../../tools/tools";
 import Cover from "./Cover/Cover";
 import Volume from "./Volume/Volume";
 import Lyrics from "./Lyrics/Lyrics";
+import { btnDelay } from "../../tools/tools";
 
 const Player = (props) => {
 
@@ -32,10 +33,13 @@ const Player = (props) => {
     }
 
     const play = () => {
-        if (isPlaying) {
-            setTimeout(() => {
-                audio?.current?.play();
-            }, 100);
+        try {
+            if (isPlaying) {
+                setTimeout(() => {
+                    audio?.current?.play();
+                }, 1000);
+            }
+        } catch {
         }
     };
 
@@ -48,7 +52,7 @@ const Player = (props) => {
         setIsPlaying(prev => !prev);
     };
 
-    const toggleFastForward = () => {
+    const fastForward = () => {
         if (index >= props.playlist.length - 1) {
             setIndex(0);
             trackId = props.playlist[0];
@@ -61,7 +65,7 @@ const Player = (props) => {
         setShowLyrics(false);
     }
 
-    const toggleRewind = () => {
+    const rewind = () => {
         if (index <= 0) {
             setIndex(props.playlist.length - 1);
             trackId = props.playlist[index];
@@ -83,7 +87,7 @@ const Player = (props) => {
 
     return (
         <section className={style.player}>
-            <audio ref={audio} src={trackLink} onEnded={toggleFastForward} onTimeUpdate={timeUpdate}/>
+            <audio ref={audio} src={trackLink} onEnded={fastForward} onTimeUpdate={timeUpdate}/>
             <nav className={style.nav_player}>
                 <div className={style.nav_player_left_items}>
                     <div className={style.nav_player_item_link}> {/*TODO переделать структуру кнопки*/}
@@ -101,7 +105,8 @@ const Player = (props) => {
                 <div className={style.main_player_status}>Now playing</div>
                 <Cover/>
                 <div className={style.main_player_info}>
-                    <div className={style.main_player_info_track}>{props.playlist[index].title}</div>
+                    <div
+                        className={style.main_player_info_track}>{index + 1}/{props.playlist.length} - {props.playlist[index].title}</div>
                     <div className={style.main_player_info_artist}>Beck</div>
                 </div>
                 <div className={style.main_player_progress}>
@@ -113,15 +118,16 @@ const Player = (props) => {
                 </div>
                 <div className={style.main_player_controls}>
                     <div className={style.repeat_icon}><BsRepeat/></div>
-                    <div className={style.rewind_icon} onClick={toggleRewind}><BsRewindFill/></div>
+                    <div className={style.rewind_icon} onClick={btnDelay(rewind, 500)}><BsRewindFill/></div>
                     <div className={style.play_icon} onClick={togglePlay}>
                         {isPlaying ? <BsPauseCircle/> : <BsPlayCircle/>}</div>
-                    <div className={style.forward_icon} onClick={toggleFastForward}><BsFastForwardFill/></div>
+                    <div className={style.forward_icon} onClick={fastForward}><BsFastForwardFill/></div>
                     <div className={style.playlist_icon}><BsList/></div>
                 </div>
                 <div className={style.main_player_tools}>
                     <Volume audio={audio}/>
-                    <Lyrics lyrics={props.playlist[index].lyrics} showLyrics={showLyrics} setShowLyrics={setShowLyrics} />
+                    <Lyrics lyrics={props.playlist[index].lyrics} showLyrics={showLyrics}
+                            setShowLyrics={setShowLyrics}/>
                 </div>
             </div>
         </section>

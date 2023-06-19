@@ -36,8 +36,8 @@
 }
 
 .form_wrapper .form_signin {
-  transform: scale(0);
-  transition: .5s;
+  transform: scale(0) translate(300px, 0);
+  transition: 1s;
   &.active{
     transform: scale(1);
   }
@@ -45,8 +45,8 @@
 
 .form_wrapper .form_signup {
   position: absolute;
-  transform: scale(0);
-  transition: .5s;
+  transform: scale(0) translate(-300px, 0);
+  transition: 1s;
   &.active {
     transform: scale(1);
   }
