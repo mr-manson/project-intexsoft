@@ -2,12 +2,11 @@ const SIGNUP = "SIGNUP";
 const SIGNIN = "SIGNIN";
 
 const initialState = {
-    data: {
-        id: null,
-        email: "",
-        refreshToken: "",
-        accessToken: "",
-    },
+    id: null,
+    email: "nikola777jr@gmail.com",
+    refreshToken: "",
+    accessToken: "",
+    count: 2,
     isAuth: false,
 };
 
@@ -31,6 +30,7 @@ const authReducer = (state = initialState, action) => {
     }
 };
 
-export const signUp = (email, password) => ({type:SIGNUP, data:{email, password}});
+export const signUp = (payload) => ({type: SIGNUP, payload});
+export const signIn = (payload) => ({type: SIGNIN, payload});
 
 export default authReducer;

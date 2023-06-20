@@ -6,6 +6,7 @@ import Library from "./components/Library/Library";
 import Explore from "./components/Explore/Explore";
 import TestingPage from "./components/TestingPage/TestingPage";
 import Player from "./components/Player/Player";
+import Artists from "./components/Explore/Artists/Artists";
 
 function App() {
 
@@ -124,6 +125,7 @@ function App() {
                         <Route path="/" element={<Main/>}/>
                         <Route path="/library" element={<Library/>}/>
                         <Route path="/explore" element={<Explore/>}/>
+                        <Route path="/artists" element={<Artists/>}/>
                         <Route path="/test" element={<TestingPage/>}/>
                     </Routes>
                 </section>

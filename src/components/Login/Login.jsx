@@ -2,9 +2,9 @@ import style from "./Login.module.scss";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import { userAPI } from "../../api/auth-api";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { signUp } from "../../store/auth-reducer";
+import { useState } from "react";
+/*import { useDispatch } from "react-redux";
+import { signUp } from "../../store/auth-reducer";*/
 
 const Login = (props) => {
 /*    const dispatch = useDispatch();
@@ -58,7 +58,7 @@ const Login = (props) => {
                                     )}
                                 </div>
                                 <button className={style.form_btn} type={"submit"}>Send</button>
-                                <div className={style.signup_link} onClick={formToggle}>Don't have an accaunt? <span>Sign up</span>
+                                <div className={style.signup_link} onClick={formToggle}>Don't have an account? <span>Sign up</span>
                                 </div>
                             </Form>
                         )}

@@ -1,4 +1,30 @@
-.playlists_content{
+.explore_wrapper{
   position: relative;
+  height: 100%;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: var(--bg-color);
   z-index: 2;
 }
+
+.title{
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 0 20px;
+  span{
+    display: inline-block;
+    color: orange;
+    transform: rotate(10deg);
+  }
+}
+
+.styles_box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+

@@ -1,6 +1,7 @@
 import style from "./TestingPage.module.scss";
 import { GiTestTubes } from "react-icons/gi";
 import default_cover from "../../assets/default_cover.jpg";
+import { useSelector } from "react-redux";
 
 const TestingPage = () => {
 
@@ -27,7 +28,7 @@ const TestingPage = () => {
                 <GiTestTubes className={style.test_icon}/>
                 <p>THIS IS TESTING PAGE</p>
             </div>
-            <img className={style.img} src={getLink(fileId)} alt=""/>
+            {/*<img className={style.img} src={getLink(fileId)} alt=""/>*/}
             {/*<div>Data from database - {data ? data : "nothing"}</div>*/}
         </div>
     )
