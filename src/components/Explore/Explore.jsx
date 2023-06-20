@@ -7,8 +7,8 @@ import { exploreAPI } from "../../api/explore-api";
 const Explore = () => {
 
     const [styles, setStyles] = useState([]);
-    useEffect(() => {
-        const res = exploreAPI.getStyles();
+    useEffect(async () => {
+        const res = await exploreAPI.getStyles();
         setStyles(res.data);
     }, []);
 

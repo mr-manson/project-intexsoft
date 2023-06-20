@@ -2,6 +2,7 @@ import api from "./api";
 
 export const exploreAPI = {
     async getStyles () {
-        return await api.get("styles");
+        const res = await api.get("styles");
+        return res;
     },
 }
