@@ -28,7 +28,7 @@ const TestingPage = () => {
                 <GiTestTubes className={style.test_icon}/>
                 <p>THIS IS TESTING PAGE</p>
             </div>
-            {/*<img className={style.img} src={getLink(fileId)} alt=""/>*/}
+            {/*<img className={style.img} src="https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/styles/classical.webp" alt=""/>*/}
             {/*<div>Data from database - {data ? data : "nothing"}</div>*/}
         </div>
     )

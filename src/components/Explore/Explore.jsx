@@ -1,20 +1,34 @@
 import style from "./Explore.module.scss";
 import { GiGClef } from "react-icons/gi";
 import Style from "./Style/Style";
+import { useEffect, useState } from "react";
+import { exploreAPI } from "../../api/explore-api";
 
 const Explore = () => {
-    const styles = [
-        {
-            id: 1,
-            name: "funk"
-        },
-        {
-            id: 2,
-            name: "electronic"},
-        {
-            id: 3,
-            name: "rock"},
-    ];
+
+    const [styles, setStyles] = useState([]);
+    useEffect(() => {
+        return async function () {
+            await exploreAPI.getStyles();
+        }
+
+        /*setStyles(res.data);*/
+    }, []);
+
+    console.log(styles);
+
+    /*    const styles = [
+            {
+                id: 1,
+                name: "funk"
+            },
+            {
+                id: 2,
+                name: "electronic"},
+            {
+                id: 3,
+                name: "rock"},
+        ];*/
 
     return (
         <div className={style.explore_wrapper}>

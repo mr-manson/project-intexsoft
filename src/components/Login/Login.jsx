@@ -1,7 +1,7 @@
 import style from "./Login.module.scss";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
-import { userAPI } from "../../api/auth-api";
+import { authAPI } from "../../api/auth-api";
 import { useState } from "react";
 /*import { useDispatch } from "react-redux";
 import { signUp } from "../../store/auth-reducer";*/
@@ -35,7 +35,7 @@ const Login = (props) => {
                         validationSchema={validationSchema}
                         initialValues={{email: "", password: ""}}
                         onSubmit={(values) => {
-                            userAPI.signIn(values.email, values.password);
+                            authAPI.signIn(values.email, values.password);
                             console.log(values.email);
                         }}>
                         {({errors, touched}) => (
@@ -68,7 +68,7 @@ const Login = (props) => {
                         validationSchema={validationSchema}
                         initialValues={{email: "", password: ""}}
                         onSubmit={(values) => {
-                            userAPI.signUp(values.email, values.password);
+                            authAPI.signUp(values.email, values.password);
                             console.log(values.email);
                         }}>
                         {({errors, touched}) => (
