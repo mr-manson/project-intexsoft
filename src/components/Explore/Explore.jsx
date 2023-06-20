@@ -8,11 +8,8 @@ const Explore = () => {
 
     const [styles, setStyles] = useState([]);
     useEffect(() => {
-        return async function () {
-            await exploreAPI.getStyles();
-        }
-
-        /*setStyles(res.data);*/
+        const res = exploreAPI.getStyles();
+        setStyles(res.data);
     }, []);
 
     console.log(styles);
