@@ -19,9 +19,9 @@ const TestingPage = () => {
     const link = "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=";
     const fileId = "1Ez-J4U6p4hTyvBhM66HvThnw9aUFceqo";
 
-    const getLink = (id) => {
+    /*const getLink = (id) => {
         return !id ? default_cover : `${link}`+id;
-    }
+    }*/
 
     console.log(data[0].id);
 

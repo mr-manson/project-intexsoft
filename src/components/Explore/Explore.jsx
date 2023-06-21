@@ -1,31 +1,13 @@
 import style from "./Explore.module.scss";
 import { GiGClef } from "react-icons/gi";
 import Style from "./Style/Style";
-import { useEffect, useState } from "react";
-import { exploreAPI } from "../../api/explore-api";
+import {dbSimulation} from "../../db_simulation/db_simulation";
 
 const Explore = () => {
 
-    const [styles, setStyles] = useState([]);
-    useEffect(async () => {
-        const res = await exploreAPI.getStyles();
-        setStyles(res.data);
-    }, []);
-
+    const styles = dbSimulation.styles;
     console.log(styles);
 
-    /*    const styles = [
-            {
-                id: 1,
-                name: "funk"
-            },
-            {
-                id: 2,
-                name: "electronic"},
-            {
-                id: 3,
-                name: "rock"},
-        ];*/
 
     return (
         <div className={style.explore_wrapper}>
@@ -33,7 +15,7 @@ const Explore = () => {
             <div className={style.styles_box}>
                 {styles.map((style) => {
                     return (
-                        <Style key={style.id} styleName={style.name}/>
+                        <Style key={style.id} styleName={style.name} img={style.img}/>
                     )
                 })}
             </div>

@@ -1,14 +1,38 @@
-.style_box{
+.card {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  border: 1px solid orange;
+  border-radius: 5px;
+  background: #000;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+
+.card:hover img {
+  transition: 1s;
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.card figcaption {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 300px;
-  width: 300px;
-  background-color: #8c98c8;
-  margin: 15px;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--font-light);
+  background: linear-gradient(0deg, #18191a 60%, #18191ab4 90%, #00000000 100%);
+  transition: transform 1s;
+  padding: 10px 14px 50px;
 }
 
-.style_name{
-  font-size: 30px;
-
+.card:hover figcaption {
+  transform: translateY(-50%);
 }
+

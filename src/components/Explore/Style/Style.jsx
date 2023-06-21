@@ -5,11 +5,12 @@ const Style = (props) => {
     return (
         <div>
             <NavLink to="/artists">
-                <div className={style.style_box}>
-                    <div className={style.style_name}>
-                        {props.styleName}
-                    </div>
-                </div>
+                <figure className={style.card}>
+                    <img src={props.img} alt="style"/>
+                    <figcaption>
+                        <div className={style.info}>{props.styleName}</div>
+                    </figcaption>
+                </figure>
             </NavLink>
         </div>
     );
