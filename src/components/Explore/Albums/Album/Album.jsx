@@ -2,8 +2,6 @@ import style from "./Album.module.scss";
 
 const Album = (props) => {
 
-    console.log(props);
-
     return (
         <div>
             <div className={style.album_item}>

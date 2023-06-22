@@ -61,7 +61,17 @@ export const dbSimulation = {
                     id: 4,
                     name: "Beck",
                     img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/funk/artist/beck/3477.webp",
-                    album: [{id: 5, title: "Sea Change"}, {id: 6, title: "Morning Phase"}]
+                    album: [
+                        {
+                            id: 5,
+                            title: "Sea Change",
+                            img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/funk/artist/beck/albums/Beck_Sea_Change.jpg",
+                        },
+                        {
+                            id: 6,
+                            title: "Morning Phase",
+                            img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/funk/artist/beck/albums/Beck_Morning_Phase.jpg"
+                        }]
                 },
             ]
         },

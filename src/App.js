@@ -128,7 +128,6 @@ function App() {
                         <Route path="/explore" element={<Explore/>}/>
                         <Route path="/artists/:styleId?" element={<Artists/>}/>
                         <Route path="/albums/:artistId?" element={<Albums/>}/>
-                        <Route path="/test" element={<TestingPage/>}/>
                     </Routes>
                 </section>
                 <Player playlist={playlist}/>

@@ -34,16 +34,9 @@ const Navigation = () => {
                         <NavLink to="/library" className={({isActive}) => isActive ? style.active : ""}>My
                             Library</NavLink>
                     </li>
-                    <li className={style.menu_item}>
-                        <NavLink to="/test"
-                                 className={({isActive}) => isActive ? style.active : ""}>Test</NavLink>
-                    </li>
                 </ul>
             </div>
-            {/*<div className={style.search}>
-                <BsSearch className={style.search_icon}/>
-                <p className={style.icon_text}>Search</p>
-            </div>*/}
+
             <div className={style.menu_login}>{!isAuth
                 ? <div onClick={showLoginBox}>Login</div>
                 : <div>{userName}</div>
