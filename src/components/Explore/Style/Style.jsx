@@ -2,13 +2,14 @@ import style from "./Style.module.scss";
 import { NavLink } from "react-router-dom";
 
 const Style = (props) => {
+
     return (
         <div>
-            <NavLink to="/artists">
+            <NavLink to={"/artists/" + props.style.id} >
                 <figure className={style.card}>
-                    <img src={props.img} alt="style"/>
+                    <img src={props.style.img} alt="style"/>
                     <figcaption>
-                        <div className={style.info}>{props.styleName}</div>
+                        <div>{props.style.styleName}</div>
                     </figcaption>
                 </figure>
             </NavLink>

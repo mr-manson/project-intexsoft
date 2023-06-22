@@ -1,13 +1,11 @@
 import style from "./Explore.module.scss";
 import { GiGClef } from "react-icons/gi";
 import Style from "./Style/Style";
-import {dbSimulation} from "../../db_simulation/db_simulation";
+import { dbSimulation } from "../../db_simulation/db_simulation";
 
 const Explore = () => {
 
     const styles = dbSimulation.styles;
-    console.log(styles);
-
 
     return (
         <div className={style.explore_wrapper}>
@@ -15,7 +13,7 @@ const Explore = () => {
             <div className={style.styles_box}>
                 {styles.map((style) => {
                     return (
-                        <Style key={style.id} styleName={style.name} img={style.img}/>
+                        <Style key={style.id} style={style}/>
                     )
                 })}
             </div>

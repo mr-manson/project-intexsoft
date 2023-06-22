@@ -1,0 +1,42 @@
+.albums_wrapper {
+  position: relative;
+  height: 100%;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: var(--bg-color);
+  z-index: 5;
+}
+
+.title {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 0 20px;
+
+  span {
+    display: inline-block;
+    color: orange;
+    transform: rotate(10deg);
+  }
+}
+
+.albums_box {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 25px;
+}
+
+.artist_info {
+  height: 100%;
+  width: 300px;
+  margin: 0 25px 0 0;
+  padding: 0 25px 0 0;
+  border-right: 1px solid white;
+  border-radius: 0;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}

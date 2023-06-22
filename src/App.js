@@ -7,6 +7,7 @@ import Explore from "./components/Explore/Explore";
 import TestingPage from "./components/TestingPage/TestingPage";
 import Player from "./components/Player/Player";
 import Artists from "./components/Explore/Artists/Artists";
+import Albums from "./components/Explore/Albums/Albums";
 
 function App() {
 
@@ -125,7 +126,8 @@ function App() {
                         <Route path="/" element={<Main/>}/>
                         <Route path="/library" element={<Library/>}/>
                         <Route path="/explore" element={<Explore/>}/>
-                        <Route path="/artists" element={<Artists/>}/>
+                        <Route path="/artists/:styleId?" element={<Artists/>}/>
+                        <Route path="/albums/:artistId?" element={<Albums/>}/>
                         <Route path="/test" element={<TestingPage/>}/>
                     </Routes>
                 </section>

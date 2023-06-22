@@ -1,0 +1,75 @@
+.album_item {
+  display: flex;
+  background-color: gray;
+  margin: 2px;
+  padding: 10px;
+  width: 400px;
+}
+
+.album_info_box {
+  margin: 0 0 0 15px;
+}
+
+.album_cover {
+  height: 100px;
+  width: 100px;
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+.playlist {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    border-style: solid;
+    border-width: 6px 4px 0 4px;
+    border-color: black transparent transparent transparent;
+    transition: 0.5s;
+  }
+}
+
+.playlist_input {
+  width: 0;
+  height: 0;
+  appearance: none;
+  position: absolute;
+}
+
+.playlist_input:checked ~ .playlist_items {
+  max-height: 1000px;
+  transition: all 2s;
+}
+
+.playlist_input:checked ~ .playlist:after {
+  border-style: solid;
+  border-width: 0 4px 6px 4px;
+  border-color: transparent transparent black transparent;
+  transition: 0.5s;
+}
+
+.playlist_items {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.7s;
+  p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    transition: all 2s;
+    span {
+      display: block;
+      color: white;
+    }
+  }
+}
