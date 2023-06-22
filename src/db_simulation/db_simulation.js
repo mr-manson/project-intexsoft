@@ -9,7 +9,12 @@ export const dbSimulation = {
                     id: 1,
                     name: "Ludwig van Beethoven",
                     img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/classical/artist/beethoven/Beethoven.webp",
-                    album: [{id: 1, title: "Violin concerto"}]
+                    album: [
+                        {
+                            id: 1,
+                            title: "Violin concerto",
+                            img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/classical/artist/beethoven/album/beethoven-album.webp"
+                        }]
                 }
             ],
         },
@@ -22,13 +27,28 @@ export const dbSimulation = {
                     id: 2,
                     name: "Air",
                     img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/electronic/artist/air/air.jpg",
-                    album: [{id: 2, title: "10.000 hz legend"}, {id: 3, title: "Moon safari"}]
+                    album: [
+                        {
+                            id: 2,
+                            title: "10.000 hz legend",
+                            img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/electronic/artist/air/album/Air_10000.jpg",
+                        },
+                        {
+                            id: 3,
+                            title: "Moon safari",
+                            img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/electronic/artist/air/album/Air_Moon_Safari.webp",
+                        }]
                 },
                 {
                     id: 3,
                     name: "Hocico",
                     img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/electronic/artist/hocico/hocico.jpg",
-                    album: [{id: 4, title: "Wrack And Ruin"}]
+                    album: [
+                        {
+                            id: 4,
+                            title: "Wrack And Ruin",
+                            img: "https://raw.githubusercontent.com/mr-manson/project-intexsoft/main/src/assets/music/electronic/artist/hocico/album/Hocico_Wrack_And_Ruin.jpg",
+                        }]
                 },
             ]
         },

@@ -9,7 +9,7 @@ const Style = (props) => {
                 <figure className={style.card}>
                     <img src={props.style.img} alt="style"/>
                     <figcaption>
-                        <div>{props.style.styleName}</div>
+                        <div>{props.style.name}</div>
                     </figcaption>
                 </figure>
             </NavLink>
