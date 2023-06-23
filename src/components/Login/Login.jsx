@@ -3,15 +3,16 @@ import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import { authAPI } from "../../api/auth-api";
 import { useState } from "react";
-/*import { useDispatch } from "react-redux";
-import { signUp } from "../../store/auth-reducer";*/
+import { signIn } from "../../store/actions/auth-actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = (props) => {
-/*    const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    /*const user = useSelector(store => store.authReducer.email);*/
 
-    useEffect(() => {
-        dispatch(signUp());
-    }, [dispatch])*/
+    /*    useEffect(() => {
+            dispatch(signUp());
+        }, [dispatch])*/
 
     const [signInActive, setSignInActive] = useState(true);
     const [signUpActive, setSignUpActive] = useState(false);
@@ -35,8 +36,7 @@ const Login = (props) => {
                         validationSchema={validationSchema}
                         initialValues={{email: "", password: ""}}
                         onSubmit={(values) => {
-                            authAPI.signIn(values.email, values.password);
-                            console.log(values.email);
+                            dispatch(signIn(values.email, values.password));
                         }}>
                         {({errors, touched}) => (
                             <Form className={`${style.form_signin} ${signInActive ? style.active : ""}`}>
